@@ -28,6 +28,8 @@ def load_and_preprocess(filepath, sample_n=None):
     # Reset index to make sure matrix indices match dataframe indices
     df_cleaned = df_cleaned.reset_index(drop=True)
     print(f"Final processed shape: {df_cleaned.shape}")
+
+    df_cleaned.to_csv(filepath.replace('.csv', '_processed.csv'))
     return df_cleaned
 
 def calculate_similarity_bow(df):
